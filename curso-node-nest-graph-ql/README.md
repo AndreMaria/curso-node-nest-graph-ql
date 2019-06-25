@@ -73,3 +73,90 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
   Nest is [MIT licensed](LICENSE).
+
+##Teste no GraphQL
+http://localhost:3000/graphql
+mutation {
+  createRegister(input: { 
+	document: "32.007.310-5",
+	cell_phone: "(11) 951462260",
+	activate: true,
+	registration_form: 
+	 {
+		current_step: "Step1",
+		steps: [ {
+					id: "",
+					inc_date: "06-25-2019",
+					update_date: "",
+				}],
+		parents: [{
+			userPublicId: "",
+			main: true,
+			name: "André Maria",
+			email: "andremaria1980@gmail.com",
+			cell_phone: "(11) 951462260",
+			phone: "(11) 951462260",
+			birthday: "02-20-1980",
+			documents: [
+				{
+					type: "RG",
+					value: "32.007.310-5"
+				}
+			],
+			address: {
+				zipcode: "05570-170",
+				street: "Rua Ruy Camargo",
+				number: "51",
+				complement: "11c"
+				},
+        responsibilities: ["Teste"],
+		}]
+		children: [
+			{
+			name: "Joaquim Roder de Maria"
+			birthday: "02-26-2015",
+			cell_phone: "",
+			gender: "4",
+			year: "4",
+			school: "T4",
+			nationality: "brasileira",
+			documents: [
+				{
+					type: "RG",
+					value: "32.007.310-5"
+				}],
+			address: {
+				zipcode: "05570-170",
+				street: "Rua Ruy Camargo",
+				number: "51",
+				complement: "11c"
+				}
+			},
+			{
+			name: "Francisco Roder de Maria",
+			birthday: "07-08-2017",
+			cell_phone: "",
+			gender: "2",
+			year: "2",
+			school: "T2"
+			nationality: "brasileira",
+			documents: [{
+					type: "RG",
+					value: "32.007.310-5"
+				}]
+			address: {
+				zipcode: "05570-170",
+				street: "Rua Ruy Camargo",
+				number: "51",
+				complement: "11c"
+				}
+			}
+		]
+	}
+  }) {
+  id
+  document
+  cell_phone
+  activate
+  }
+}
